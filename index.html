@@ -214,8 +214,6 @@ var color="mr";
 for (var i = 0; i < sub.length; i++) {
 sub[i].addEventListener('click', function(){
 
-
-//this.style.background=color;
 if(this.classList.contains("clicked")){
 
 }else{
@@ -230,8 +228,6 @@ color="mr";
 this.classList.add(color);
 this.classList.add("clicked");
 sound.play();
-}
-
 
 if( (sub[0].classList.contains("aw")) && (sub[1].classList.contains("aw")) && (sub[2].classList.contains("aw")) ){
 winner(0);
@@ -273,6 +269,10 @@ winner(1);
 else if( (sub[0].classList.contains("clicked")) && (sub[1].classList.contains("clicked")) && (sub[2].classList.contains("clicked")) && (sub[3].classList.contains("clicked")) && (sub[4].classList.contains("clicked")) && (sub[5].classList.contains("clicked")) && (sub[6].classList.contains("clicked")) && (sub[7].classList.contains("clicked")) && (sub[8].classList.contains("clicked"))){
 winner(5);
 }
+
+}
+
+
 
 
 }, false);
