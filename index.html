@@ -206,6 +206,19 @@ playerMr.value=pmr;
 else if(winner==5){
 win.innerHTML="Match Draw";
 }
+else{
+
+}
+
+sub[0].classList.add("clicked");
+sub[1].classList.add("clicked");
+sub[2].classList.add("clicked");
+sub[3].classList.add("clicked");
+sub[4].classList.add("clicked");
+sub[5].classList.add("clicked");
+sub[6].classList.add("clicked");
+sub[7].classList.add("clicked");
+sub[8].classList.add("clicked");
 win.style.display="block";
 win.style.transform="translate(-50%,-50%) scale(1)";
 }
@@ -214,7 +227,7 @@ var color="mr";
 for (var i = 0; i < sub.length; i++) {
 sub[i].addEventListener('click', function(){
 
-if(this.classList.contains("clicked")){
+if(this.classList.contains("clicked") ){
 
 }else{
 if(color=="mr"){
