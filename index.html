@@ -11,7 +11,7 @@ padding:0;
 }
 .main { 
 background:black;
-border:5px solid teal;
+border:5px solid rgba(80,180,80,0.9);
 display:grid;
 width:300px;
 height:300px;
@@ -44,7 +44,7 @@ height:30px;
 padding:0;
 margin:6px auto;
 display:block;
-border:2px solid teal;
+border:1px solid rgba(80,180,80,0.9);
 background:white;
 }
 h1{
@@ -52,7 +52,7 @@ text-align:center;
 font-family:Arial,sans-serif;
 display:block;
 padding:8px;
-background:teal;
+background:rgba(80,180,80,0.9);
 color:white;
 margin-bottom:6px;
 }
@@ -81,9 +81,11 @@ display:none;
 display:inline-block;
 float:left;
 padding:5px;
-background:#ccc;
+background:#ddd;
 color:black;
 width:80px;
+border:1px solid #ccc;
+border-radius:0 6px 6px 0;
 }
 .player2{
 display:inline-block;
@@ -92,6 +94,8 @@ padding:5px;
 background:#ddd;
 color:black;
 width:80px;
+border:1px solid #ccc;
+border-radius:6px 0 0 6px;
 }
 .player img{
 width:35px;
@@ -123,7 +127,7 @@ outline:none;
 text-align:center;
 padding:8px;
 margin:10px;
-background:teal;
+background:rgba(80,180,80,0.9);
 color:white;
 border-top:1px solid #ccc;
 border-radius:0 0 6px 6px;
@@ -134,7 +138,7 @@ border-radius:0 0 6px 6px;
 <h1>AHR Game</h1>
 
 <p class="player" > <img src="AW.jpeg" ><input id="playerAw" value="0" disabled="disabled"  ></p>
-<label class="computer"  for="computer"> Computer <input id="computer"  type="checkbox" ></label>
+<label class="computer"  for="computer"> Computer <input id="computer" onclick="cp();"  type="checkbox" ></label>
 <p class="player2" ><img src="MR.jpeg" ><input id="playerMr"  value="0" disabled="disabled"  ></p>
 <div style="clear:both;" ></div>
 <button id="Colorr" class="aw" onclick="recall()" style="width:90px;height:60px;margin:5px;display:inline-block;" ></button>
@@ -209,27 +213,33 @@ recall();
 
 }
 
-
+p1= prompt("Player 1 Name");
+p2=prompt("Player 2 Name");
+if(p1==null){
+p1="Player 1";
+}if(p2==null){
+p2="Player 2";
+}
 
 function winner(winner){
 winmusic.play();
 if(winner==0){
-win.innerHTML="Alan Walker Win!";
+win.innerHTML=p1+" Win!";
 paw=parseInt(playerAw.value)+1;
 playerAw.value=paw;
 who=1;
 if(playerAw.value > playerMr.value){
-plyc1.style.boxShadow="inset 0 0 15px 2px blue";
+plyc1.style.boxShadow="inset 0 0 15px 2px green";
 plyc2.style.boxShadow="none";
 }
 }
 else if(winner==1){
-win.innerHTML="Marshmello Win!";
+win.innerHTML=p2+" Win!";
 pmr=parseInt(playerMr.value)+1;
 playerMr.value=pmr;
 who=0;
 if(playerMr.value > playerAw.value){
-plyc2.style.boxShadow="inset 0 0 15px 2px blue";
+plyc2.style.boxShadow="inset 0 0 15px 2px green";
 plyc1.style.boxShadow="none";
 }
 }
@@ -340,7 +350,6 @@ var currentTim=document.getElementById("currentTime");
 currentTim.innerHTML=tim;
 },1000);
 
-
 function computeryy(){
 var rndm=Math.floor(Math.random()*9);
 if(sub[rndm].classList.contains("clicked")){
@@ -355,8 +364,20 @@ function recall(){
 computeryy();
 }
 
+function cp(){
+clearDiv();
+playerAw.value=0;
+playerMr.value=0;
+}
+
+
+
+// computer
+
+
+
 
 </script>
 
-</body>
+</body>	
 </html>
