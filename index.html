@@ -158,14 +158,14 @@ border-radius:0 0 6px 6px;
 
 <div id="win" onclick="clearDiv();" ></div>
 
-<audio id="winmusic"  src="win.wav"></audio>
-<audio autoplay="false"  class="sound" id="sound" src="soundClick.wav"  ></audio>
+  
 <script type="text/javascript">
-var winmusic=document.getElementById("winmusic");
+
 var win=document.getElementById("win");
 var sub=document.getElementsByClassName("sub");
 var colord=document.getElementById("Colorr");
-var sound=document.getElementById("sound");
+var sound=new Audio('soundClick.wav');
+var winmusic=new Audio('win.wav');
 var computer=document.getElementById("computer");
 var playerAw=document.getElementById("playerAw");
 var playerMr=document.getElementById("playerMr");
